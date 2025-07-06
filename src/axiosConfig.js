@@ -1,10 +1,7 @@
 // src/axiosConfig.js
 import axios from 'axios';
 
-axios.defaults.baseURL =
-  process.env.NODE_ENV !== 'production'
-    ? 'https://isvaryam-backend.onrender.com'
-    : '/';
+axios.defaults.baseURL = 'https://isvaryam-backend.onrender.com'; // ✅ Hardcoded always
 
 axios.interceptors.request.use(config => {
   const user = JSON.parse(localStorage.getItem('user'));
@@ -14,4 +11,4 @@ axios.interceptors.request.use(config => {
   return config;
 });
 
-export default axios; // ✅ This line is missing in your current file
+export default axios;
